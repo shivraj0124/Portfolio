@@ -10,17 +10,17 @@ function Footer() {
           <div className='flex flex-col justify-start  items-center w-[100%] mt-5'>
               
               <div className='flex flex-col gap-y-4'>
-                  <div className='flex flex-row justify-center items-center gap-x-4 text-xl'>
-                      <CgMail className='bg-gray-300 text-xl p-2 rounded-[50%] text-red-500' size={40} />
-                      <h3 className=''>shivrajkolwankar24@gmail.com</h3>
+                  <div className='flex flex-row justify-center items-center gap-x-4'>
+                      <a href='mailto:shivrajsk0124@gmail.com' target='_blank'><CgMail className='bg-gray-300 text-xl p-2 rounded-[50%] text-red-500' size={40} /></a>
+                     <a href='mailto:shivrajsk0124@gmail.com' target='_blank' className='max-[362px]:text-[80%] text-xl'>shivrajsk0124@gmail.com</a>
                   </div>
                   <div className='flex flex-row justify-center items-center gap-x-4 text-xl '>
                       <FiPhone className='bg-gray-300 text-xl  rounded-[50%] p-2 text-green-500' size={40} />
                       <h3>9356455929</h3>
                   </div>
                   <div className='flex flex-row justify-center items-center gap-4 mt-5 '>
-                      <a href='https://github.com/shivraj0124' target='_blank'><BsLinkedin className='cursor-pointer hover:text-blue-600' size={32} /></a> 
-                      <a href='www.linkedin.com/in/shivraj-kolwankar0124' target='_blank'><AiFillGithub className='cursor-pointer hover:text-blue-600' size={32} /></a>
+                      <a href='https://www.linkedin.com/in/shivraj-kolwankar0124' target='_blank'><BsLinkedin className='cursor-pointer hover:text-blue-600' size={32} /></a> 
+                      <a href='https://github.com/shivraj0124' target='_blank'><AiFillGithub className='cursor-pointer hover:text-blue-600' size={32} /></a>
                       <a href='https://instagram.com/_shivraj.24?igshid=MWl2Z2U1a2NtZHNhYQ==' target='_blank'><BsInstagram className='cursor-pointer hover:text-blue-600' size={32} /></a>
                   </div>
               </div>

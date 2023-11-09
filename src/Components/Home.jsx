@@ -9,8 +9,8 @@ function Home() {
     <div className='w-[100%] px-[10%]  text-black z-[-2] max-md:pt-10 '>
      <div className='flex flex-row max-md:flex-col justify-center items-center'>
         <div className='w-[100%] flex flex-col justify-start items-start'>
-            <h1 className='font-semibold'>Hey There!</h1>
-            <h1 className='font-bold text-3xl'>I am Shivraj Santosh Kolwankar</h1>
+            <h1 className='font-semibold text-lg'>Hey There!</h1>
+            <h1 className='font-bold text-4xl'>I am Shivraj Santosh Kolwankar</h1>
                   <h1 className='text-2xl  font-semibold'>Web <span className='text-cyan-700 '>Developer</span></h1>
                   <p>Passionate Web Developer with skills in React,Tailwind CSS,Node js,MongoDB. Developing User friendly applications </p>
                   <div className='text-sm mt-5 flex flex-row gap-4 '>
