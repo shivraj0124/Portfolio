@@ -1,5 +1,6 @@
 import React from 'react'
 import img1 from '../assets/home-image.png'
+import resume from '../assests/resume_shivraj.pdf'
 function About() {
     return (
         <div className='w-[100%] px-[10%] py-12  text-black  z-[-2] ' id='about'>
