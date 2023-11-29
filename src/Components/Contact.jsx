@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { MdOutlineCancel } from 'react-icons/md'
 import img1 from '../assets/contact.png'
+import { CgMail } from 'react-icons/cg'
+import { FiPhone } from 'react-icons/fi'
+import { BsLinkedin } from 'react-icons/bs'
+import { AiFillGithub } from 'react-icons/ai'
 function Contact() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [msg, setMessage] = useState("")
-    const [submit,setSubmit]=useState(false)
+    const [submit, setSubmit] = useState(false)
     const handleSubmit = (e) => {
         e.preventDefault()
         setName("")
@@ -14,17 +18,17 @@ function Contact() {
         setSubmit(true)
     }
     return (
-        <div className='w-[100%] px-4 md:px-[10%] py-10  text-black  flex flex-col justify-center items-center' id='contact'>
+        <div className='w-[100%] px-4 md:px-[10%] pt-10  text-black  flex flex-col justify-center items-center' id='contact'>
             <h1 className='font-bold text-3xl text-center'>Contact</h1>
-            { submit ? <>
-            <div className="bg-cyan-500 px-4 py-2 border rounded-lg flex gap-x-2 mt-4 ">
+            {submit ? <>
+                <div className="bg-cyan-500 px-4 py-2 border rounded-lg flex gap-x-2 mt-4 ">
                     <p>Your message has been sent successfully</p>
-                    <MdOutlineCancel className='flex right-0 text-red-500' size={20} onClick={()=>setSubmit(false)}/> 
+                    <MdOutlineCancel className='flex right-0 text-red-500' size={20} onClick={() => setSubmit(false)} />
                 </div>
-            </>:''
+            </> : ''
             }
-            <div className='flex flex-row max-md:flex-col justify-center items-center max-md:w-[100%] md:w-[90%]'>
-                <form onSubmit={handleSubmit} className='flex flex-col w-[100%] py-10'>
+            <div className='flex flex-row-reverse max-md:flex-col-reverse justify-center items-center max-md:w-[100%] md:w-[90%]'>
+                <form onSubmit={handleSubmit} className='flex flex-col w-[100%] py-10 max-md:mt-10'>
                     <input type='text' value={name} className=' rounded-md p-2  focus:bg-white focus:text-black border-2 border-cyan-600' onChange={
                         (e) => {
                             setName(e.target.value)
@@ -40,9 +44,29 @@ function Contact() {
                         }} placeholder='Enter message here..' required ></textarea><br />
                     <button className='w-max py-1 px-3 hover:bg-cyan-500 hover:text-white border-2 border-cyan-500 text-cyan-600 font-semibold rounded-md'>Send Message</button>
                 </form>
-               <div className='w-[70%] max-md:hidden '>
-                <img className='' src={img1} alt="" />
-               </div>
+                <div className='w-[70%] max-md:mt-10 text-left flex flex-col  md:px-10 text-cyan-600'>
+                    {/* <img className='' src={img1} alt="" /> */}
+
+                    <div className='flex flex-col  justify-start cursor-pointer hover:text-red-500'>
+                        <CgMail size={44} />
+                        <a href='mailto:shivrajsk0124@gmail.com' target='_blank' className='  text-lg'>shivrajsk0124@gmail.com</a>
+                    </div>
+                    <div className='flex flex-col  justify-start mt-5   cursor-pointer hover:text-green-500 '>
+                        <FiPhone size={36} />
+                        <h5 href='mailto:shivrajsk0124@gmail.com' target='_blank' className='  text-lg'>+91 9356455929</h5>
+                    </div>
+                    <div className='flex flex-col  justify-start mt-5 cursor-pointer hover:text-blue-500'>
+                        <BsLinkedin size={36} />
+                        <a href='https://www.linkedin.com/in/shivraj-kolwankar0124' target='_blank' className='  text-lg'>Shivraj Kolwankar</a>
+                    </div>
+                    <div className='flex flex-col  justify-start mt-5 cursor-pointer hover:text-slate-900'>
+                        <AiFillGithub size={36} />
+                        <a href='https://github.com/shivraj0124' target='_blank' className='  text-lg'>Shivraj0124</a>
+                    </div>
+
+
+
+                </div>
             </div>
         </div>
     )
