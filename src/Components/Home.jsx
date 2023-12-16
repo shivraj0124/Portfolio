@@ -1,7 +1,8 @@
 import React from 'react'
-import img1 from '../assets/home-image.png'
+import img1 from '../assets/coding_gif.gif'
 import { AiFillGithub } from 'react-icons/ai'
 import { BsLinkedin, BsInstagram } from 'react-icons/bs'
+import { Zoom } from "react-awesome-reveal";
 function Home() {
   const scrollToProjects = () => {
     const aboutSection = document.getElementById('project');
@@ -9,7 +10,8 @@ function Home() {
   };
   return (
     <div className='w-[100%] px-[10%]  text-black z-[-2] max-md:pt-10 '>
-      <div className='flex flex-row max-md:flex-col justify-center items-center'>
+      <div className='flex flex-row max-md:flex-col justify-center items-center md:mt-20'>
+        <Zoom >
         <div className='w-[100%] flex flex-col justify-start items-start'>
           <h1 className='font-semibold text-lg'>Hey There!</h1>
           <h1 className='font-bold text-4xl'>I am Shivraj Santosh Kolwankar</h1>
@@ -25,9 +27,14 @@ function Home() {
             <a href='https://instagram.com/_shivraj.24?igshid=MWl2Z2U1a2NtZHNhYQ==' target='_blank'><BsInstagram className='cursor-pointer hover:text-blue-600  text-cyan-600' size={26} /></a>
           </div>
         </div>
+        </Zoom>
+        <Zoom >
         <div className='w-[100%]'>
           <img className='w-[100%]' src={img1} alt="" />
+
+          
         </div>
+        </Zoom>
       </div>
     </div>
   )

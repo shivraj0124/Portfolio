@@ -1,13 +1,17 @@
 import { BiSolidSchool } from 'react-icons/bi'
+import { Zoom } from "react-awesome-reveal";
 function Education() {
     return (
+            <Zoom>
         <div className="w-[100%] md:px-[10%] px-4  py-10" id='education'>
             <div className="flex flex-col max-md:flex-col justify-center items-center ">
+                <Zoom>
                 <h1 className='font-bold text-3xl '>Education</h1>
-
-                <div className="flex flex-row gap-x-10 max-md:flex-col justify-center items-center mt-10 py-10  w-[100%]">
-
-                    <div className='w-[100%] py-5 flex flex-row items-start justify-between md:gap-x-10 max-md:gap-x-4'>
+                </Zoom>
+                
+                <div className="flex flex-row gap-x-16 max-md:flex-col justify-center items-center mt-10 py-10  w-[100%]">
+                    
+                    <div className='w-[100%] py-5 flex flex-row items-start justify-between md:gap-x-8 max-md:gap-x-4'>
                         <div className='bg-cyan-500 p-3 rounded-[50%]'>
                             <BiSolidSchool size={20} />
                         </div>
@@ -21,6 +25,7 @@ function Education() {
                             </div>
                         </div>
                     </div>
+                    
                     <div className='w-[100%] py-5 flex flex-row items-start justify-between md:gap-x-10 max-md:gap-x-4'>
                         <div className='bg-cyan-500 p-3 rounded-[50%]'>
                             <BiSolidSchool size={20} />
@@ -35,10 +40,12 @@ function Education() {
                             </div>
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
         </div >
+            </Zoom>
 
     );
 }

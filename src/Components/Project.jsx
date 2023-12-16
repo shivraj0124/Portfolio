@@ -6,8 +6,10 @@ import muxic from '../assets/muxic.png'
 import React from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { BiLink } from 'react-icons/bi'
+import { Zoom } from "react-awesome-reveal";
 function Project() {
     return (
+    <Zoom>
         <div className='w-[100%] px-4 md:px-[10%] py-10  text-black ' id='project'>
             <div className='flex flex-col  justify-center items-center'>
                 <h1 className='font-bold text-3xl '>My Projects</h1>
@@ -19,7 +21,7 @@ function Project() {
                         </div>
                     </div> */}
                     
-
+                <Zoom>
                 <div className='card shadow-xl'>
                     <img src={it_dept} className='card-img opacity-1' alt="" />
                         <div className=' card-body flex flex-col justify-center items-center bg-gradient-to-b from-cyan-500 to-cyan-200 opacity-90'>
@@ -30,6 +32,9 @@ function Project() {
                         </div>
                     </div>
                 </div>
+                        </Zoom>
+                        <Zoom>
+
                 <div className='card shadow-xl'>
                         <img src={byteStudy} className='card-img' alt="" />
                         <div className=' card-body flex flex-col justify-center items-center bg-gradient-to-b from-cyan-500 to-cyan-200 opacity-90 '>
@@ -40,6 +45,9 @@ function Project() {
                         </div>
                     </div>
                 </div>
+                        </Zoom>
+                        <Zoom>
+
                 <div className='card shadow-xl'>
                         <img src={nasaAE} className='card-img' alt="" />
                         <div className=' card-body flex flex-col justify-center items-center bg-gradient-to-b from-cyan-500 to-cyan-200 opacity-90 '>
@@ -50,6 +58,9 @@ function Project() {
                         </div>
                     </div>
                 </div>
+                        </Zoom>
+                        <Zoom>
+
                 <div className='card shadow-xl'>
                         <img src={imageGallery} className='card-img' alt="" />
                         <div className=' card-body flex flex-col justify-center items-center bg-gradient-to-b from-cyan-500 to-cyan-200 opacity-90 '>
@@ -60,6 +71,9 @@ function Project() {
                         </div>
                     </div>
                 </div>
+                        </Zoom>
+                        <Zoom>
+
                 <div className='card shadow-xl'>
                         <img src={muxic} className='card-img' alt="" />
                         <div className=' card-body flex flex-col justify-center items-center bg-gradient-to-b from-cyan-500 to-cyan-200 opacity-90 '>
@@ -70,9 +84,12 @@ function Project() {
                         </div>
                     </div>
                 </div>
+                        </Zoom>
+
                 </div> 
             </div>
         </div>
+        </Zoom>
     )
 }
 

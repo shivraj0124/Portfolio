@@ -5,28 +5,26 @@ import { CgMail } from 'react-icons/cg'
 import { FiPhone } from 'react-icons/fi'
 import { BsLinkedin } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
+import { Zoom } from "react-awesome-reveal";
+import toast from 'react-hot-toast'
 function Contact() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [msg, setMessage] = useState("")
-    const [submit, setSubmit] = useState(false)
     const handleSubmit = (e) => {
         e.preventDefault()
         setName("")
         setMessage("")
         setEmail("")
-        setSubmit(true)
+        toast.success('Message sent successfully !',{
+            position:'top-center'
+        })
     }
     return (
+        <Zoom>
         <div className='w-[100%] px-4 md:px-[10%] pt-10  text-black  flex flex-col justify-center items-center' id='contact'>
             <h1 className='font-bold text-3xl text-center'>Contact</h1>
-            {submit ? <>
-                <div className="bg-cyan-500 px-4 py-2 border rounded-lg flex gap-x-2 mt-4 ">
-                    <p>Your message has been sent successfully</p>
-                    <MdOutlineCancel className='flex right-0 text-red-500' size={20} onClick={() => setSubmit(false)} />
-                </div>
-            </> : ''
-            }
+            
             <div className='flex flex-row-reverse max-md:flex-col-reverse justify-center items-center max-md:w-[100%] md:w-[90%]'>
                 <form onSubmit={handleSubmit} className='flex flex-col w-[100%] py-10 max-md:mt-10'>
                     <input type='text' value={name} className=' rounded-md p-2  focus:bg-white focus:text-black border-2 border-cyan-600' onChange={
@@ -69,6 +67,7 @@ function Contact() {
                 </div>
             </div>
         </div>
+        </Zoom>
     )
 }
 
