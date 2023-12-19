@@ -37,7 +37,7 @@ function Contact() {
             if (response.ok) {
                 const result = await response.json();
                 if (result.success) {
-                    toast.success('Email sent successfully');
+                    toast.success('Message sent successfully');
                 } else {
                     toast.error(`Error: ${result.message}`);
                 }
