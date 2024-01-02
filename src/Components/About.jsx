@@ -3,12 +3,14 @@ import img1 from '../assets/home-image.png'
 import resume from '../assets/resume_shivraj.pdf'
 import { saveAs } from 'file-saver'
 import { Zoom } from "react-awesome-reveal";
+import themeHook from './ThemeContext';
 function About() {
+    const {theme,changeTheme}=themeHook()
     const downloadResume = () => {
         saveAs(resume, "Shivraj Resume")
     }
     return (
-        <div className='w-[100%] px-[10%] py-12  text-black  z-[-2] ' id='about'>
+        <div className={`w-[100%] px-[10%] max-md:py-5 md:py-28 z-[-2] ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'}`}  id='about '>
                 <Zoom>
             <div className='flex flex-row-reverse max-md:flex-col justify-center items-center'>
                     <div className='w-[100%] flex flex-col justify-start items-start'>

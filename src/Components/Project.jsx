@@ -7,19 +7,16 @@ import React from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { BiLink } from 'react-icons/bi'
 import { Zoom } from "react-awesome-reveal";
+import themeHook from './ThemeContext'
 function Project() {
+    const {theme}=themeHook()
     return (
-        <Zoom>
-            <div className='w-[100%] px-4 md:px-[10%] py-10  text-black ' id='project'>
+        
+            <div className={`w-[100%] px-4 md:px-[10%] py-10 ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'} `} id='project'>
+                <Zoom>
                 <div className='flex flex-col  justify-center items-center'>
                     <h1 className='font-bold text-3xl '>My Projects</h1>
                     <div className='py-24 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-lg:grid-cols-3 gap-10 '>
-                        {/* <div className='flex flex-col items-center rounded-md w-[100%]  shadow-xl skill-div text-cyan-700 hover:text-orange-500 cursor-pointer '>
-                        <img className='rounded-md' src={it_dept} alt="" />
-                        <div className='transition-'>
-                          
-                        </div>
-                    </div> */}
 
                         <Zoom>
                             <div className='card shadow-xl'>
@@ -88,8 +85,8 @@ function Project() {
 
                     </div>
                 </div>
+                </Zoom>
             </div>
-        </Zoom>
     )
 }
 
