@@ -44,10 +44,10 @@ function Contact() {
                     toast.error(`Error: ${result.message}`);
                 }
             } else {
-                throw new Error('Network response was not ok');
+                toast.error(`Error! Something went wrong..`);
             }
         } catch (error) {
-            toast.error(`Error: ${result.message}`);
+            toast.error(`Error: ${error}`);
         }
         setName("")
         setEmail("")
