@@ -28,7 +28,7 @@ function Contact() {
         }
 
         try {
-            const response = await fetch(`${urlBackend}api/send-email/`, {
+            const response = await fetch(`${urlBackend}api/send-email`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ function Contact() {
                 throw new Error('Network response was not ok');
             }
         } catch (error) {
-            console.error('Error:', error);
+            toast.error(`Error: ${result.message}`);
         }
         setName("")
         setEmail("")
