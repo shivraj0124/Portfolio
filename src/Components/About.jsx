@@ -1,6 +1,6 @@
 import React from 'react'
 import img1 from '../assets/home-image.png'
-import resume from '../assets/Shivraj Resume.pdf'
+import resume from '../assets/Shivraj Kolwankar Resume.pdf'
 import { saveAs } from 'file-saver'
 import { Zoom } from "react-awesome-reveal";
 import themeHook from './ThemeContext';
