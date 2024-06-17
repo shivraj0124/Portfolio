@@ -5,11 +5,9 @@ function Education() {
     const {theme}=themeHook()
     return (
      
-        <div className={`w-[100%] md:px-[10%] px-4  py-10  id='about  ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'} `} id='education'>
+        <div className={`w-[100%] max-md:px-4 md:px-[10%]  py-10   ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'} `} id='education'>
             <div className="flex flex-col max-md:flex-col justify-center items-center ">
-                <Zoom>
                 <h1 className='font-bold text-3xl '>Education</h1>
-                </Zoom>
                 
                 <div className="flex flex-row gap-x-16 max-md:flex-col justify-center items-center mt-10 py-10  w-[100%]">
                     

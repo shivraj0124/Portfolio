@@ -9,10 +9,11 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import { Toaster } from "react-hot-toast";
 import { ThemeContextProvider } from "./Components/ThemeContext";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <>
-     
+     <BrowserRouter>
         <ThemeContextProvider>
           <Navbar />
           <Home />
@@ -24,6 +25,7 @@ function App() {
           <Footer />
           <Toaster />
         </ThemeContextProvider>
+        </BrowserRouter>
     </>
   );
 }

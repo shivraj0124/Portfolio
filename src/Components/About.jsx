@@ -2,7 +2,6 @@ import React from 'react'
 import img1 from '../assets/home-image.png'
 import resume from '../assets/Shivraj Resume.pdf'
 import { saveAs } from 'file-saver'
-import { Zoom } from "react-awesome-reveal";
 import themeHook from './ThemeContext';
 function About() {
     const {theme,changeTheme}=themeHook()
@@ -10,8 +9,8 @@ function About() {
         saveAs(resume, "Shivraj Resume")
     }
     return (
-        <div className={`w-[100%] px-[10%] max-md:py-5 md:py-28 z-[-2] ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'}`}  id='about '>
-                <Zoom>
+        <div className={`w-[100%] max-md:px-4 px-[10%] max-md:py-5 md:py-28 z-[-2] ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'}`}  id='about '>
+                {/* <Zoom> */}
             <div className='flex flex-row-reverse max-md:flex-col justify-center items-center'>
                     <div className='w-[100%] flex flex-col justify-start items-start'>
                         <h1 className='font-bold text-4xl'>About Me</h1>
@@ -28,7 +27,7 @@ function About() {
                         <img className='w-[100%]' src={img1} alt="" />
                     </div>
             </div>
-                </Zoom>
+                {/* </Zoom> */}
         </div>
     )
 }

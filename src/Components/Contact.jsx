@@ -5,7 +5,6 @@ import { CgLogIn, CgMail } from "react-icons/cg";
 import { FiPhone } from "react-icons/fi";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
-import { Zoom } from "react-awesome-reveal";
 import toast from "react-hot-toast";
 import ClipLoader from "react-spinners/ClipLoader";
 import themeHook from "./ThemeContext";
@@ -54,10 +53,9 @@ function Contact() {
       } flex flex-col justify-center items-center`}
       id="contact"
     >
-      <Zoom>
-        <h1 className="font-bold text-3xl text-center">Contact</h1>
-      </Zoom>
-      <div className="flex flex-row-reverse max-md:flex-col-reverse justify-center items-center max-md:w-[100%] md:w-[90%]">
+      <h1 className="font-bold text-3xl text-center">Contact</h1>
+
+      <div className="flex flex-row-reverse max-md:flex-col justify-center items-center max-md:w-[100%] md:w-[90%]">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col w-[100%] py-10 max-md:mt-10"
@@ -112,50 +110,78 @@ function Contact() {
             {!loader ? "" : <ClipLoader color="#f8fafc" size={30} />}
           </button>
         </form>
-        <div className="w-[70%] max-md:mt-10 text-left flex flex-col  md:px-10 text-cyan-600">
+        <div className="w-[100%]  max-md:mt-10 text-left flex flex-col max-md:justify-center max-md:items-center  text-cyan-600 max-md:hidden">
           {/* <img className='' src={img1} alt="" /> */}
-
-          <div className="flex flex-col  justify-start cursor-pointer hover:text-red-500 w-max">
-            <CgMail size={44} />
-            <a
-              href="mailto:shivrajsk0124@gmail.com"
-              target="_blank"
-              className=" text-lg "
-            >
-              shivrajsk0124@gmail.com
-            </a>
+          <div className="flex md:flex-col max-sm:flex-col max-md:flex-row max-md:items-center max-md:justify-between  w-[80%]">
+            <div className="flex flex-col  justify-start cursor-pointer hover:text-red-500 w-max">
+              <CgMail size={44} />
+              <a
+                href="mailto:shivrajsk0124@gmail.com"
+                target="_blank"
+                className=" text-lg "
+              >
+                shivrajsk0124@gmail.com
+              </a>
+            </div>
+            <div className="flex flex-col  justify-start max-md:mt-0 mt-5   cursor-pointer hover:text-green-500 w-max ">
+              <FiPhone size={36} />
+              <h5
+                href="mailto:shivrajsk0124@gmail.com"
+                target="_blank"
+                className="  text-lg"
+              >
+                +91 9356455929
+              </h5>
+            </div>
           </div>
-          <div className="flex flex-col  justify-start mt-5   cursor-pointer hover:text-green-500 w-max ">
-            <FiPhone size={36} />
-            <h5
-              href="mailto:shivrajsk0124@gmail.com"
-              target="_blank"
-              className="  text-lg"
-            >
-              +91 9356455929
-            </h5>
-          </div>
-          <div className="flex flex-col  justify-start mt-5 cursor-pointer hover:text-blue-500 w-max">
-            <BsLinkedin size={36} />
-            <a
-              href="https://www.linkedin.com/in/shivraj-kolwankar0124"
-              target="_blank"
-              className="  text-lg"
-            >
-              Shivraj Kolwankar
-            </a>
-          </div>
-          <div className="flex flex-col  justify-start mt-5 cursor-pointer hover:text-violet-900 w-max">
-            <AiFillGithub size={36} />
-            <a
-              href="https://github.com/shivraj0124"
-              target="_blank"
-              className="  text-lg"
-            >
-              Shivraj0124
-            </a>
+          <div className="flex md:flex-col max-sm:flex-col max-md:flex-row max-md:items-center max-md:justify-between max-sm:justify-start w-[80%] max-md:mt-2">
+            {" "}
+            <div className="flex flex-col  justify-start mt-5  max-md:mt-0 cursor-pointer hover:text-blue-500 w-max">
+              <BsLinkedin size={36} />
+              <a
+                href="https://www.linkedin.com/in/shivraj-kolwankar0124"
+                target="_blank"
+                className="  text-lg"
+              >
+                Shivraj Kolwankar
+              </a>
+            </div>
+            <div className="flex flex-col  justify-start mt-5 max-md:mt-0 cursor-pointer hover:text-violet-900 w-max">
+              <AiFillGithub size={36} />
+              <a
+                href="https://github.com/shivraj0124"
+                target="_blank"
+                className="  text-lg"
+              >
+                Shivraj0124
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-start items-center w-[100%] md:hidden gap-5 pb-5">
+        <a
+          href="mailto:shivrajsk0124@gmail.com"
+          target="_blank"
+          className=" text-lg "
+        >
+          <CgMail size={44} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/shivraj-kolwankar0124"
+          target="_blank"
+          className="  text-lg"
+        >
+          <BsLinkedin size={32} />
+        </a>
+        <a
+          href="https://github.com/shivraj0124"
+          target="_blank"
+          className="  text-lg"
+        >
+          <AiFillGithub size={36} />
+        </a>
       </div>
     </div>
   );

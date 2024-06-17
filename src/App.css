@@ -34,3 +34,24 @@
 .card:hover .card-body{
     right:0;
 }
+
+/* Typewriter.css */
+@keyframes blinkCursor {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .web-dev .text-cyan-700::after {
+    content: '|';
+    animation: blinkCursor 0.7s infinite;
+    margin-left: 2px;
+    color: currentColor; /* Use the same color as the text */
+  }
+  

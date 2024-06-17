@@ -39,7 +39,7 @@ function Navbar() {
         <div
           className={`md:flex items-center justify-between ${
             theme === "dark" ? "bg-[#121212]" : "bg-white"
-          } py-4  px-[10%] z-20`}
+          } py-4 max-md:px-4 md:px-[10%] z-20`}
         >
           <div className="font-bold text-3xl cursor-pointer flex items-center  text-cyan-600 z-20">
             Shivraj
