@@ -21,7 +21,7 @@ function Project() {
       <div className="flex flex-col  justify-center items-center">
         <h1 className="font-bold text-3xl ">Projects</h1>
 
-        <div className="py-24 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-lg:grid-cols-3 gap-10 ">
+        <div className="py-24 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-lg:grid-cols-2 gap-10 ">
           <div
             className={`flex flex-col justify-between gap-2 p-4 rounded-xl shadow-xl   ${
               theme === "dark" ? "bg-[#262525]" : "bg-white border"
