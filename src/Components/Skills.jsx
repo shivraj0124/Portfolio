@@ -9,7 +9,7 @@ function Skills() {
         <div className={`w-[100%] max-md:px-4 md:px-[10%] py-10   ${theme === 'dark' ? 'text-white bg-[#121212]':'text-black bg-white'}  z-[-2]'  `} id='skills'>
             <div className='flex flex-col  justify-center items-center'>
                  
-                    <h1 className='font-bold text-3xl '>My Skills</h1>
+                    <h1 className='font-bold text-3xl '>Skills</h1>
                  
                 <div className='py-10 grid grid-cols-4 max-md:grid-cols-2 max-[300px]:grid-cols-1 max-lg:grid-cols-3 gap-10 text-center'>
                      

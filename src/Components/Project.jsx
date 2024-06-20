@@ -19,7 +19,7 @@ function Project() {
       id="project"
     >
       <div className="flex flex-col  justify-center items-center">
-        <h1 className="font-bold text-3xl ">My Projects</h1>
+        <h1 className="font-bold text-3xl ">Projects</h1>
 
         <div className="py-24 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-lg:grid-cols-3 gap-10 ">
           <div
@@ -253,11 +253,11 @@ function Project() {
                   </span>
                 </div>
                 <div className="flex flex-row gap-x-2">
-                  <a href="https://music-app-sk.netlify.app" target="_blank">
+                  <a href="https://img-gallery-five.vercel.app" target="_blank">
                     <BiLink className="hover:text-blue-700  " size={24} />
                   </a>
                   <a
-                    href="https://github.com/shivraj0124/Music-App"
+                    href="https://github.com/shivraj0124/ImageSearcher-App"
                     target="_blank"
                   >
                     <AiFillGithub className="hover:text-blue-700 " size={24} />
@@ -314,11 +314,11 @@ function Project() {
                   </span>
                 </div>
                 <div className="flex flex-row gap-x-2">
-                  <a href="https://img-gallery-five.vercel.app" target="_blank">
+                  <a href="https://music-app-sk.netlify.app" target="_blank">
                     <BiLink className="hover:text-blue-700  " size={24} />
                   </a>
                   <a
-                    href="https://github.com/shivraj0124/ImageSearcher-App"
+                    href="https://github.com/shivraj0124/Music-App"
                     target="_blank"
                   >
                     <AiFillGithub className="hover:text-blue-700 " size={24} />
@@ -355,6 +355,7 @@ function Project() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
