@@ -6,7 +6,7 @@ function Footer() {
           <div className='flex flex-col justify-start  items-center w-[100%] mt-5'>
                        
           </div>
-                  <h2 className='mt-5 text-gray-400'>Copyright ©2024. All Rights Reserved.</h2>
+{/*                   <h2 className='mt-5 text-gray-400'>Copyright ©2024. All Rights Reserved.</h2> */}
     </div>
   )
 }
