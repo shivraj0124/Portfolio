@@ -57,10 +57,9 @@ function ProjectCard({ project }) {
             Description
           </span>
           <div className="">
-            The website of IT Department of Government Polytechnic Mumbai, which
-            includes all the information about department and it provides
-            dashboard for Admin ,Faculties and Students.
-          </div>
+              {project.Description}
+              
+            </div>
         </div>
       </div>
 
