@@ -15,9 +15,15 @@ export const ThemeContextProvider = ({ children }) => {
         }
     }
 
+    const fade = {
+        "hidden": { opacity: 0 },
+        "visible": { opacity: 1 }
+    }
+
     const value = {
         theme,
         changeTheme,
+        fade
     }
     useEffect(() => {
         localStorage.setItem("theme", theme)

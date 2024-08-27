@@ -6,7 +6,7 @@ import themeHook from "./ThemeContext";
 function About() {
   const { theme, changeTheme } = themeHook();
   const downloadResume = () => {
-    saveAs(resume, "Shivraj Resume");
+    saveAs(resume, "Shivraj Kolwankar Resume");
   };
   return (
     <div
@@ -22,8 +22,8 @@ function About() {
             Web Developer
           </h1>
           <p>
-            Hello !!! I am Shivraj Santosh Kolwankar. Currently pursuing diploma
-            in Information Technology from Government Polytechnic Mumbai. I am
+            Hello !!! I am Shivraj Santosh Kolwankar. Currently pursuing Bachelor of Technology
+            in Information Technology from Veermata Jijabai Technological Institute. I am
             very much interested in programming and web development. Enthusiastic
             to improve my knowledge and learn new Technolgies. Programming
             Language and Frameworks known: Javascript React js Node js Express

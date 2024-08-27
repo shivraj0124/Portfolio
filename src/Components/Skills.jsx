@@ -11,7 +11,7 @@ function Skills() {
                  
                     <h1 className='font-bold text-3xl '>Skills</h1>
                  
-                <div className='py-10 grid grid-cols-4 max-md:grid-cols-2 max-[300px]:grid-cols-1 max-lg:grid-cols-3 gap-10 text-center'>
+                <div className='py-10 grid grid-cols-6 max-md:grid-cols-2 max-[300px]:grid-cols-1 max-lg:grid-cols-3 gap-10 text-center'>
                      
                         <div className={`flex flex-col items-center rounded-md w-[100%] px-10 py-5 shadow-xl skill-div text-cyan-700 hover:text-orange-500 cursor-pointer ${theme === 'dark' ? ' bg-[#262525]':'bg-white'}`}>
                             <AiOutlineHtml5 size={60} />
