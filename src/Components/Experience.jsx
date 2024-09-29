@@ -11,7 +11,7 @@ function Experience() {
     >
         <h1 className="font-bold text-3xl text-center">Experience</h1>
       <div className={`mt-8 px-4 pb-4  ${
-        theme === "dark" ? "text-white bg-[#181818]" : "text-black bg-white"
+        theme === "dark" ? "text-white bg-[#181818] rounded-md" : "text-black bg-white border rounded-md"
       } `}
       >
         
@@ -26,7 +26,7 @@ function Experience() {
             </p>
           </div>
           <ul className={`  mt-2 ${
-        theme === "dark" ? "text-gray-200" : "text-gray-500"
+        theme === "dark" ? "text-gray-200" : "text-black"
       }  `} >
             <li>
               • Developed frontend and backend of websites using Next.js and
