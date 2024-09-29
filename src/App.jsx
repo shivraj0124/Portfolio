@@ -11,6 +11,7 @@ import { Toaster } from "react-hot-toast";
 import { ThemeContextProvider } from "./Components/ThemeContext";
 import { BrowserRouter } from "react-router-dom";
 import { motion, useScroll } from "framer-motion";
+import Experience from "./Components/Experience";
 function App() {
   const { scrollYProgress } = useScroll();
   return (
@@ -25,8 +26,9 @@ function App() {
             <Navbar />
             <Home />
             <About />
-            <Skills />
+            <Experience/>
             <Education />
+            <Skills />
             <Project />
             <Contact />
             <Footer />

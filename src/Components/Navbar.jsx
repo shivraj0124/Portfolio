@@ -12,6 +12,10 @@ function Navbar() {
     const aboutSection = document.getElementById("about");
     aboutSection.scrollIntoView({ behavior: "smooth" });
   };
+  const scrollToExperience = () => {
+    const aboutSection = document.getElementById("experience");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
   const scrollToSkills = () => {
     const aboutSection = document.getElementById("skills");
     aboutSection.scrollIntoView({ behavior: "smooth" });
@@ -72,6 +76,14 @@ function Navbar() {
                 onClick={() => scrollToAbout()}
               >
                 About
+              </a>
+            </li>
+            <li className="md:ml-8 md:my-0 my-2">
+              <a
+                className="  hover:text-cyan-600 duration-500 cursor-pointer"
+                onClick={() => scrollToExperience()}
+              >
+                Experience
               </a>
             </li>
             <li className="md:ml-8 md:my-0 my-2">
