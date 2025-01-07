@@ -1,6 +1,6 @@
 import React from "react";
 import img1 from "../assets/home-image.png";
-import resume from "../assets/Shivraj_Kolwankar_Resume.pdf";
+import resume from "../assets/Resume_Shivraj_Kolwankar.pdf";
 import { saveAs } from "file-saver";
 import themeHook from "./ThemeContext";
 function About() {
