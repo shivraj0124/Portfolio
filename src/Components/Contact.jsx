@@ -27,12 +27,8 @@ function Contact() {
     };
 
     try {
-      const response = await axios.post(`${urlBackend}/api/contactUs`, {
-        name: name,
-        email: email,
-        message: msg,
-      });
-      console.log(response, "data");
+      const response = await axios.post(`${urlBackend}/api/contactUs`,data);
+      
       if (response.data.status) {
         toast.success(response.data.message);
       } else {
