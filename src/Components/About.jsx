@@ -6,7 +6,7 @@ import themeHook from "./ThemeContext";
 function About() {
   const { theme, changeTheme } = themeHook();
   const downloadResume = () => {
-    saveAs(resume, "Shivraj Kolwankar Resume");
+    saveAs(resume, "Shivraj Kolwankar Web Developer Resume");
   };
   return (
     <div
