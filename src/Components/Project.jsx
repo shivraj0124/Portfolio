@@ -8,7 +8,6 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BiLink } from "react-icons/bi";
 import themeHook from "./ThemeContext";
-import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 
 function Project() {
@@ -72,11 +71,10 @@ function Project() {
 
   ];
   const { theme } = themeHook();
-  const navigate = useNavigate();
   return (
     <div
       className={`w-[100%] px-4 md:px-[10%] py-10 ${
-        theme === "dark" ? "text-white bg-[#121212]" : "text-black bg-white"
+        theme === "dark" ? "text-white " : "text-black "
       } `}
       id="project"
     >

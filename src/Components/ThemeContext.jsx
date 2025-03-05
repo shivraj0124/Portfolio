@@ -4,7 +4,7 @@ import react from 'react'
 const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "white");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark");
 
     const changeTheme = () => {
         if (theme == "dark") {

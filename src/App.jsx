@@ -12,30 +12,40 @@ import { ThemeContextProvider } from "./Components/ThemeContext";
 import { BrowserRouter } from "react-router-dom";
 import { motion, useScroll } from "framer-motion";
 import Experience from "./Components/Experience";
-function App() {
+import themeHook from "./Components/ThemeContext";
+
+
+function AppContent() {
+  const { theme } = themeHook();
   const { scrollYProgress } = useScroll();
+
   return (
-    <>
-      <BrowserRouter>
-        <ThemeContextProvider>
-          <motion.div
-            className="z-40 fixed top-0 left-0 right-0 h-1 bg-cyan-500 origin-left"
-            style={{ scaleX: scrollYProgress }}
-          />
-          
-            <Navbar />
-            <Home />
-            <About />
-            <Experience/>
-            <Education />
-            <Skills />
-            <Project />
-            <Contact />
-            <Footer />
-          <Toaster />
-        </ThemeContextProvider>
-      </BrowserRouter>
-    </>
+    <div className={`${theme === "dark" ? "bg-gradient-to-tr from-black  to-slate-900 text-white" : "inset-0 bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb]  text-black"} `}>
+      {/* Scroll Indicator */}
+      <motion.div
+        className="z-40 fixed top-0 left-0 right-0 h-1 bg-cyan-500 origin-left"
+        style={{ scaleX: scrollYProgress }}
+      />
+
+      <Navbar />
+      <Home />
+      <About />
+      <Experience />
+      <Skills />
+      <Project />
+      <Education />
+      <Contact />
+      <Footer />
+      <Toaster />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeContextProvider>
+      <AppContent />
+    </ThemeContextProvider>
   );
 }
 

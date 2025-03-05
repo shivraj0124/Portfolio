@@ -42,7 +42,7 @@ function Navbar() {
       <div className="shadow-md w-full ">
         <div
           className={`md:flex items-center justify-between ${
-            theme === "dark" ? "bg-[#121212]" : "bg-white"
+            theme === "dark" ? "" : ""
           } py-4 max-md:px-4 md:px-[10%] z-20`}
         >
           <div className="font-bold text-3xl cursor-pointer flex items-center  text-cyan-600 z-20">
@@ -53,8 +53,8 @@ function Navbar() {
             onClick={() => setOpen(!open)}
             className={`${
               theme === "dark"
-                ? "text-white bg-[#121212]"
-                : "text-black bg-white"
+                ? "text-white "
+                : "text-black "
             } text-3xl absolute right-8 top-6 cursor-pointer md:hidden`}
           >
             {open ? <MdOutlineClose size={20} /> : <HiOutlineMenu size={20} />}
@@ -62,18 +62,20 @@ function Navbar() {
 
           <ul
             className={`md:flex md:items-center  absolute md:static  md:z-auto z-10 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-300 ease-in ${
-              theme === "dark" ? "text-white max-md:bg-[#262525]" : "text-black max-md:bg-gray-200"
+              theme === "dark" ? "text-white max-md:text-white max-md:bg-gradient-to-tr from-black  to-slate-900" : "text-black max-md:text-black  max-md:bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb] "
             } ${open ? "top-16 " : "top-[-490px]"}`}
           >
             <li className="md:ml-8 md:my-0 my-2">
-              <a className="  hover:text-cyan-600 duration-500 cursor-pointer">
+              <a className="  hover:text-cyan-600 duration-500 cursor-pointer" onClick={() => setOpen(!open)}>
                 Home
               </a>
             </li>
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToAbout()}
+                onClick={() => {scrollToAbout()
+                  setOpen(!open)
+                }}
               >
                 About
               </a>
@@ -81,7 +83,9 @@ function Navbar() {
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToExperience()}
+                onClick={() => {scrollToExperience()
+                  setOpen(!open)
+                }}
               >
                 Experience
               </a>
@@ -89,7 +93,9 @@ function Navbar() {
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToSkills()}
+                onClick={() => {scrollToSkills()
+                  setOpen(!open)
+                }}
               >
                 Skills
               </a>
@@ -97,7 +103,9 @@ function Navbar() {
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToEducation()}
+                onClick={() => {scrollToEducation()
+                  setOpen(!open)
+                }}
               >
                 Education
               </a>
@@ -105,7 +113,9 @@ function Navbar() {
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToProjects()}
+                onClick={() => {scrollToProjects()
+                  setOpen(!open)
+                }}
               >
                 Projects
               </a>
@@ -113,7 +123,9 @@ function Navbar() {
             <li className="md:ml-8 md:my-0 my-2">
               <a
                 className="  hover:text-cyan-600 duration-500 cursor-pointer"
-                onClick={() => scrollToContact()}
+                onClick={() => {scrollToContact()
+                  setOpen(!open)
+                }}
               >
                 Contact
               </a>

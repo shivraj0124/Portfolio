@@ -6,7 +6,7 @@ function EducationCard({ year, collegeName, educationDetails }) {
   return (
     // <div className="flex flex-col justify-between  bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
     <div className={`flex flex-col justify-between shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105  ${
-        theme === "dark" ? "bg-[#262525]  text-white" : "bg-white border text-black"
+        theme === "dark" ? "border  text-white" : " border text-black"
       }`}>
       {/* Top Section with Year */}
       <div className="flex items-center justify-between p-6 ">

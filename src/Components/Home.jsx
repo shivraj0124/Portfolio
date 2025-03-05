@@ -36,13 +36,13 @@ function Home() {
 
   return (
     <div
-      className={`w-[100%] max-md:px-4 md:px-[10%] ${
-        theme === "dark" ? "text-white bg-[#121212]" : "text-black bg-white"
+      className={`w-[100%] h-screen max-md:px-4 md:px-[10%] bg-transparent .bgC ${
+        theme === "dark" ? "text-white bg-gradient-to-tr from-black  to-slate-900" : "text-black inset-0 bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb]  "
       } z-[-2] max-md:pt-10`}
     >
       <div
         className={`flex flex-row max-md:flex-col justify-center items-center ${
-          theme === "dark" ? "text-white bg-[#121212]" : "text-black bg-white"
+          theme === "dark" ? "text-white " : "text-black "
         } md:py-10`}
       >
         <div className="w-[100%] flex flex-col justify-start items-start transition-all duration-300 ease-in">

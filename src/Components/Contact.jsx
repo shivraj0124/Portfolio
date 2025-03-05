@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { MdOutlineCancel } from "react-icons/md";
-import img1 from "../assets/contact.png";
-import { CgLogIn, CgMail } from "react-icons/cg";
+import { CgMail } from "react-icons/cg";
 import { FiPhone } from "react-icons/fi";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 import toast from "react-hot-toast";
-import ClipLoader from "react-spinners/ClipLoader";
+import BeatLoader from "react-spinners/BeatLoader";
+import { motion } from "framer-motion";
 import themeHook from "./ThemeContext";
 import axios from "axios";
+
 function Contact() {
   const { theme } = themeHook();
   const [name, setName] = useState("");
@@ -16,170 +16,86 @@ function Contact() {
   const [msg, setMessage] = useState("");
   const [loader, setLoader] = useState(false);
   const urlBackend = import.meta.env.VITE_BACKEND_API;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
-
-    const data = {
-      name: name,
-      email: email,
-      message: msg,
-    };
+    const data = { name, email, message: msg };
 
     try {
-      const response = await axios.post(`${urlBackend}/api/contactUs`,data);
-      
-      if (response.data.status) {
-        toast.success(response.data.message);
-      } else {
-        toast.error(response.data.message);
-      }
+      const response = await axios.post(`${urlBackend}/api/contactUs`, data);
+      response.data.status ? toast.success(response.data.message) : toast.error(response.data.message);
     } catch (error) {
       toast.error(`Error: ${error}`);
     }
-    setName("");
-    setEmail("");
-    setMessage("");
-    setLoader(false);
+    setName(""), setEmail(""), setMessage(""), setLoader(false);
   };
+
   return (
-    <div
-      className={`w-[100%] px-4 md:px-[10%] pt-10  ${
-        theme === "dark" ? "text-white bg-[#121212]" : "text-black bg-white"
-      } flex flex-col justify-center items-center`}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className={`w-full min-h-screen flex flex-col justify-center items-center px-4 md:px-20 pt-10 ${
+        theme === "dark"
+          ? "bg-gradient-to-tr from-black to-slate-900 text-white"
+          : "bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb] text-black"
+      }`}
       id="contact"
     >
-      <h1 className="font-bold text-3xl text-center">Contact</h1>
+      <h1 className="font-bold text-4xl text-center mb-10">Contact Me</h1>
+      <form
+        
+        className="backdrop-blur-lg rounded-lg p-8 shadow-lg max-w-lg w-full"
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
+          value={name}
+          className={`w-full p-3 mb-4 rounded-md border border-cyan-500 bg-transparent ${theme === 'dark' ? 'placeholder-gray-300 text-white':'placeholder:black text-black'} focus:outline-none focus:ring-2 focus:ring-cyan-400`}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          value={email}
+          className={`w-full p-3 mb-4 rounded-md border border-cyan-500 bg-transparent ${theme === 'dark' ? 'placeholder-gray-300 text-white':'placeholder:black text-black'}  focus:outline-none focus:ring-2 focus:ring-cyan-400`}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email Address"
+          required
+        />
+        <textarea
+          rows={5}
+          value={msg}
+          className={`w-full p-3 mb-4 rounded-md border border-cyan-500 bg-transparent ${theme === 'dark' ? 'placeholder-gray-300 text-white':'placeholder:black text-black'}  focus:outline-none focus:ring-2 focus:ring-cyan-400`}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Enter message here.."
+          required
+        ></textarea>
+        <button
+          type="submit"
+          className="w-full flex justify-center items-center gap-2 py-3 bg-cyan-400 text-black font-semibold rounded-md shadow-md hover:bg-cyan-600 transition duration-300"
+        >
+          {loader ?  <BeatLoader color="#fff" size={20} />:'Send Message'}
+        </button>
+      </form>
 
-      <div className="flex flex-row-reverse max-md:flex-col justify-center items-center max-md:w-[100%] md:w-[90%]">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col w-[100%] py-10 max-md:mt-10"
-        >
-          <input
-            type="text"
-            value={name}
-            className={`rounded-md p-2   border-2 border-cyan-600 ${
-              theme === "dark"
-                ? "text-white bg-[#121212]"
-                : "text-black bg-white focus:bg-white focus:text-black"
-            } `}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            placeholder="Your Name"
-            required
-          />
-          <br />
-          <input
-            type="email"
-            value={email}
-            className={` sm:w-[100%] rounded-md p-2   border-2 border-cyan-600  ${
-              theme === "dark"
-                ? "  text-white bg-[#121212]"
-                : "bg-white focus:bg-white focus:text-black"
-            }`}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            placeholder="Email Address"
-            required
-          />
-          <br />
-          <textarea
-            rows={8}
-            value={msg}
-            className={` sm:w-[100%] rounded-md p-2   border-2 border-cyan-600 ${
-              theme === "dark"
-                ? "  text-white bg-[#121212]"
-                : "bg-white focus:bg-white focus:text-black"
-            }`}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-            placeholder="Enter message here.."
-            required
-          ></textarea>
-          <br />
-          <button className=" flex flex-row justify-center items-center gap-x-2 w-max py-1 px-3 h-[40px] hover:bg-cyan-500 hover:text-white border-2 border-cyan-500 text-cyan-600 font-semibold rounded-md">
-            Send Message
-            {!loader ? "" : <ClipLoader color="#f8fafc" size={30} />}
-          </button>
-        </form>
-        <div className="w-[100%]  max-md:mt-10 text-left flex flex-col max-md:justify-center max-md:items-center  text-cyan-600 max-md:hidden">
-          {/* <img className='' src={img1} alt="" /> */}
-          <div className="flex md:flex-col max-sm:flex-col max-md:flex-row max-md:items-center max-md:justify-between  w-[80%]">
-            <div className="flex flex-col  justify-start cursor-pointer hover:text-red-500 w-max">
-              <CgMail size={44} />
-              <a
-                href="mailto:shivrajsk0124@gmail.com"
-                target="_blank"
-                className=" text-lg "
-              >
-                shivrajsk0124@gmail.com
-              </a>
-            </div>
-            <div className="flex flex-col  justify-start max-md:mt-0 mt-5   cursor-pointer hover:text-green-500 w-max ">
-              <FiPhone size={36} />
-              <h5
-                href="mailto:shivrajsk0124@gmail.com"
-                target="_blank"
-                className="  text-lg"
-              >
-                +91 9356455929
-              </h5>
-            </div>
-          </div>
-          <div className="flex md:flex-col max-sm:flex-col max-md:flex-row max-md:items-center max-md:justify-between max-sm:justify-start w-[80%] max-md:mt-2">
-            {" "}
-            <div className="flex flex-col  justify-start mt-5  max-md:mt-0 cursor-pointer hover:text-blue-500 w-max">
-              <BsLinkedin size={36} />
-              <a
-                href="https://www.linkedin.com/in/shivraj-kolwankar0124"
-                target="_blank"
-                className="  text-lg"
-              >
-                Shivraj Kolwankar
-              </a>
-            </div>
-            <div className="flex flex-col  justify-start mt-5 max-md:mt-0 cursor-pointer hover:text-violet-900 w-max">
-              <AiFillGithub size={36} />
-              <a
-                href="https://github.com/shivraj0124"
-                target="_blank"
-                className="  text-lg"
-              >
-                Shivraj0124
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-start items-center w-[100%] md:hidden gap-5 pb-5">
-        <a
-          href="mailto:shivrajsk0124@gmail.com"
-          target="_blank"
-          className=" text-lg "
-        >
-          <CgMail size={44} />
+      <div className="flex items-center gap-6 mt-8 text-cyan-500">
+        <a href="mailto:shivrajsk0124@gmail.com" target="_blank" className="hover:text-red-500 transition">
+          <CgMail size={40} />
         </a>
-        <a
-          href="https://www.linkedin.com/in/shivraj-kolwankar0124"
-          target="_blank"
-          className="  text-lg"
-        >
-          <BsLinkedin size={32} />
+        <a href="https://www.linkedin.com/in/shivraj-kolwankar" target="_blank" className="hover:text-blue-500 transition">
+          <BsLinkedin size={28} />
         </a>
-        <a
-          href="https://github.com/shivraj0124"
-          target="_blank"
-          className="  text-lg"
-        >
+        <a href="https://github.com/shivraj0124" target="_blank" className="hover:text-violet-900 transition">
           <AiFillGithub size={36} />
         </a>
+        <a href="tel:+919356455929" target="_blank" className="hover:text-green-500 transition">
+          <FiPhone size={32} />
+        </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

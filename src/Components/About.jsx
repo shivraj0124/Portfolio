@@ -11,9 +11,9 @@ function About() {
   return (
     <div
       className={`w-[100%] max-md:px-4 px-[10%] max-md:py-5 md:py-28 z-[-2] ${
-        theme === "dark" ? "text-white bg-[#121212]" : "text-black bg-white"
+        theme === "dark" ? "bg-gradient-to-tr from-black  to-slate-900 text-white" : "inset-0 bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb]  text-black"
       }`}
-      id="about "
+      id="about"
     >
       <div className="flex flex-row-reverse max-md:flex-col justify-center items-center">
         <div className="w-[100%] flex flex-col justify-start items-start">
