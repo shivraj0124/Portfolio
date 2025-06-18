@@ -15,8 +15,8 @@ function ProjectCard({ project }) {
     <motion.div
       className={`z-0 flex flex-col justify-between gap-2 p-4 rounded-xl shadow-xl  ${
         theme === "dark"
-          ? "border border-gray-800  bg-gradient-to-b from-black to-slate-900 "
-          : "border inset-0 bg-gradient-to-bl from-[#83bee9] via-[#e8e8ec] to-[#a6d6f8]  "
+          ? "border border-gray-800  bg-gradient-to-b from-black to-slate-900 hover:bg-gradient-to-t"
+          : "border inset-0 bg-gradient-to-bl from-[#83bee9] via-[#e8e8ec] to-[#a6d6f8]  hover:bg-gradient-to-t"
       }`}
       ref={divfade}
       variants={fade}
@@ -83,7 +83,7 @@ function ProjectCard({ project }) {
         <div className="flex flex-wrap text-[12px]  gap-1">
           {project?.Technologies?.map((technology, id) => {
             return (
-              <div className="p-1 px-2 border border-gray-600 rounded-md w-max">
+              <div className="p-1 px-2 border border-gray-600 rounded-md w-max hover:border-cyan-500">
                 {technology}
               </div>
             );

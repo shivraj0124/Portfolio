@@ -1,12 +1,12 @@
 import React from "react";
 import img1 from "../assets/home-image.png";
-import resume from "../assets/Shivraj_Kolwankar_Web_Developer_Resume.pdf";
+import resume from "../assets/Resume_Shivraj_Kolwankar_Software_Developer.pdf";
 import { saveAs } from "file-saver";
 import themeHook from "./ThemeContext";
 function About() {
   const { theme, changeTheme } = themeHook();
   const downloadResume = () => {
-    saveAs(resume, "Shivraj Kolwankar Web Developer Resume");
+    saveAs(resume, "Shivraj Kolwankar Software Developer Resume");
   };
   return (
     <div
@@ -19,15 +19,16 @@ function About() {
         <div className="w-[100%] flex flex-col justify-start items-start">
           <h1 className="font-bold text-4xl">About Me</h1>
           <h1 className="text-2xl  font-semibold text-cyan-700">
-            Web Developer
+            Software Developer
           </h1>
           <p>
             Hello !!! I am Shivraj Santosh Kolwankar. Currently pursuing Bachelor of Technology
             in Information Technology from Veermata Jijabai Technological Institute. I am
             very much interested in programming and web development. Enthusiastic
-            to improve my knowledge and learn new Technolgies. Programming
-            Language and Frameworks known: Javascript React js Node js Express
-            js Python C C++ Java.
+            to improve my knowledge and learn new Technolgies. 
+            <p> <p className="font-bold">Programming
+            Language and Frameworks known:</p><p > Javascript, Java, Python, C, C++, React.js, Node.js, Express.js, Next.js.
+            </p></p>
           </p>
           <div className="text-sm mt-5 flex flex-row gap-4 ">
             <button

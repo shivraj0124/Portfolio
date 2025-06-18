@@ -37,7 +37,9 @@ function Home() {
   return (
     <div
       className={`w-[100%] h-screen max-md:px-4 md:px-[10%] bg-transparent .bgC ${
-        theme === "dark" ? "text-white bg-gradient-to-tr from-black  to-slate-900" : "text-black inset-0 bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb]  "
+        theme === "dark"
+          ? "text-white bg-gradient-to-tr from-black  to-slate-900"
+          : "text-black inset-0 bg-gradient-to-tr from-[#c6deef] via-[#e8e8ec] to-[#a9d0eb]  "
       } z-[-2] max-md:pt-10`}
     >
       <div
@@ -49,12 +51,12 @@ function Home() {
           <h1 className="font-semibold text-lg">Hey There!</h1>
           <h1 className="font-bold text-4xl">I'm Shivraj Santosh Kolwankar</h1>
           <h1 className="web-dev text-2xl font-semibold">
-            Web <span className="text-cyan-600 ">{displayedText}</span>
+            Software <span className="text-cyan-600 ">{displayedText}</span>
           </h1>
           <p>
-            a passionate web developer skilled in React, Tailwind CSS, Node.js
-            and MongoDB. I specialize in creating user-friendly applications
-            that deliver seamless experiences
+            I’m a web developer who loves building websites with React, Tailwind
+            CSS, Node.js, and MongoDB. I focus on making apps that are easy to
+            use and give a smooth experience for everyone.
           </p>
           <div className="flex flex-row justify-center items-center gap-4 mt-5 md:mt-10">
             <a
@@ -90,7 +92,7 @@ function Home() {
           </div>
           <div className="text-sm mt-5 flex flex-row gap-4">
             <button
-              className="py-1 px-3 hover:bg-cyan-500 hover:text-white border-2 border-cyan-500 text-cyan-600 font-semibold rounded-md"
+              className="py-1 px-3 bg-cyan-600 text-white border-2 border-cyan-600 hover:bg-transparent font-semibold rounded-md"
               onClick={scrollToProjects}
             >
               See Projects
